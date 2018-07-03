@@ -1,0 +1,10 @@
+{
+  "name": "ewallet-services",
+  "version": "0.0.1",
+  "description": "ewallet-services",
+  "title": "ewallet-services",
+  "url" : "http://localhost:3000/api",
+  "template": {
+    "forceLanguage": "en"
+  }
+}

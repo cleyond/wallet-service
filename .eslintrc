@@ -1,0 +1,205 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true
+  },
+  "globals":{
+    "shallow": true,
+    "render": true,
+    "mount": true,
+    "renderer": true,
+    "mockAxios": true,
+    "__DEV__": true
+  },
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "babel",
+    "import",
+    "compat"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "camelcase": "off",
+    "react/prefer-stateless-function": "off",
+    "arrow-body-style": [
+      2,
+      "as-needed"
+    ],
+    "import/newline-after-import": 2,
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "indent": [
+      2,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "jsx-a11y/aria-props": 2,
+    "jsx-a11y/alt-text": 0,
+    "jsx-a11y/heading-has-content": 0,
+    "jsx-a11y/href-no-hash": 0,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/mouse-events-have-key-events": 2,
+    "jsx-a11y/role-has-required-aria-props": 2,
+    "jsx-a11y/role-supports-aria-props": 2,
+    "newline-per-chained-call": 0,
+    "no-confusing-arrow": 0,
+    "no-prototype-builtins": 0,
+    "no-use-before-define": 0,
+    "prefer-template": 2,
+    "class-methods-use-this": 0,
+    "react/jsx-first-prop-new-line": [
+      2,
+      "multiline"
+    ],
+    "react/jsx-filename-extension": 0,
+    "react/jsx-no-target-blank": 0,
+    "react/require-extension": 0,
+    "require-yield": 0,
+    "import/no-webpack-loader-syntax": 0,
+    "react/require-default-props": 0,
+    "semi": 0,
+    "quotes": [
+      2,
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "space-before-function-paren": [
+      2,
+      {
+        "anonymous": "always",
+        "named": "never"
+      }
+    ],
+    "eqeqeq": 0,
+    "no-var": "error",
+    "no-console": 0,
+    "no-alert": "error",
+    "no-debugger": "error",
+    "no-useless-escape": "error",
+    "yoda": "error",
+    "arrow-parens": [
+      2,
+      "always"
+    ],
+    "arrow-spacing": 2,
+    "brace-style": [
+      2,
+      "1tbs"
+    ],
+    "padded-blocks": 0,
+    "newline-after-var": 0,
+    "spaced-comment": 0,
+    "max-len": [2, 180],
+    "array-bracket-spacing": [
+      2,
+      "never"
+    ],
+    "computed-property-spacing": [
+      2,
+      "never"
+    ],
+    "no-trailing-spaces": [
+      2,
+      {
+        "skipBlankLines": true
+      }
+    ],
+    "generator-star-spacing": 0,
+    "comma-dangle": 2,
+    "no-underscore-dangle": 0,
+    "import/no-unresolved": [
+      2,
+      {
+        "commonjs": true,
+        "amd": true
+      }
+    ],
+    "import/named": 0,
+    "import/namespace": 0,
+    "import/default": 0,
+    "import/export": 2,
+    "import/no-named-as-default": 0,
+    "import/no-commonjs": 0,
+    "import/no-amd": 2,
+    "import/imports-first": 2,
+    "import/no-duplicates": 2,
+    "no-unused-vars": [
+      2,
+      {
+        "argsIgnorePattern": "React"
+      }
+    ],
+    "jsx-quotes": [
+      2,
+      "prefer-single"
+    ],
+    "react/jsx-boolean-value": 2,
+    "react/jsx-no-undef": 2,
+    "react/jsx-sort-prop-types": 0,
+    "react/jsx-sort-props": 0,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "react/jsx-curly-spacing": [
+      2,
+      "never"
+    ],
+    "react/jsx-indent-props": [
+      2,
+      2
+    ],
+    "react/jsx-max-props-per-line": [
+      2,
+      {
+        "maximum": 5
+      }
+    ],
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/jsx-no-bind": 2,
+    "no-return-assign": 0,
+    "react/no-array-index-key": 0,
+    "react/jsx-no-duplicate-props": 2,
+    "react/display-name": 0,
+    "react/no-danger": 0,
+    "react/no-did-update-set-state": 2,
+    "react/no-direct-mutation-state": 2,
+    "react/no-did-mount-set-state": 0,
+    "react/no-multi-comp": 2,
+    "react/no-string-refs": 0,
+    "react/no-unknown-property": 2,
+    "react/no-set-state": 0,
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": 2,
+    "react/self-closing-comp": 2,
+    "react/sort-comp": 2,
+    "react/forbid-prop-types": 0,
+    "babel/new-cap": 0,
+    "babel/object-curly-spacing": [
+      2,
+      "never"
+    ],
+    "object-curly-spacing": 0,
+    "no-plusplus": [0, {"allowForLoopAfterthoughts": true}],
+    "object-shorthand": 2,
+    "no-await-in-loop": 1,
+    "compat/compat": 2
+  },
+  "settings": {
+    "polyfills": ["promises"]
+  }
+}
