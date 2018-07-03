@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "nodemon src/index.js --exec babel-node --presets env",
+    "dev": "NODE_ENV=development nodemon src/index.js --exec babel-node --presets env",
     "build": "babel src -d dist",
     "docs": "apidoc -i src",
     "docs:deploy": "sh deploydocs.sh",
