@@ -1,3 +1,9 @@
+/*
+ * @Author: Matheus Rezende
+ * @Date: 2018-07-04 19:55:43
+ * @Last Modified by:   @matheusrezende
+ * @Last Modified time: 2018-07-04 19:55:43
+ */
 require('dotenv').config();
 
 // used to control the body of the requests
