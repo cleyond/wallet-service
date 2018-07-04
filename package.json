@@ -36,6 +36,8 @@
     "morgan": "^1.9.0",
     "pretty-error": "^2.1.1",
     "raven": "^2.6.3",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
     "slug": "^0.9.1",
     "winston": "^3.0.0"
   },
