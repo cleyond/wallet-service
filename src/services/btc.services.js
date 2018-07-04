@@ -2,9 +2,12 @@
  * @Author: Matheus Rezende
  * @Date: 2018-07-04 19:54:44
  * @Last Modified by: @matheusrezende
- * @Last Modified time: 2018-07-04 20:30:51
+ * @Last Modified time: 2018-07-04 21:29:33
  */
 import bitcore from 'bitcore-lib'
+import Request from 'request-promise'
+
+import {CHECK_BALANCE_URL} from '../constants/btc.constants';
 
 
 /**
@@ -21,11 +24,19 @@ export const createBitcoreAddress = () => {
 /**
  * @function validateAddress
  *
- * @returns {Bool} return if the address is valids
+ * @returns {Bool} return if the address is valid
  */
-export const validateBitcoreAddress = (address) => {
-  console.log('-------------------')
-  console.log(address)
-  console.log('-------------------')
-  return bitcore.Address.isValid(address)
-}
+export const validateBitcoreAddress = (address) => bitcore.Address.isValid(address)
+
+
+/**
+ * @function getBalance
+ *
+ * @returns {Bool} return balance of the account
+ */
+export const getBalance = (address) =>
+  // @TODO: Validate the address before checking and throw error if not valid
+  // HOW to validate the address??
+
+  Request(CHECK_BALANCE_URL + address)
+
