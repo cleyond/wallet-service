@@ -2,7 +2,7 @@
  * @Author: Matheus Rezende
  * @Date: 2018-07-04 19:55:35
  * @Last Modified by: @matheusrezende
- * @Last Modified time: 2018-07-04 21:33:44
+ * @Last Modified time: 2018-07-05 13:42:23
  */
 import HTTPStatus from 'http-status';
 import Joi from 'joi'
@@ -16,7 +16,7 @@ export const validation = {
       network: Joi.string().required(),
     },
   },
-  balance: {
+  checkBalance: {
     params: {
       address: Joi.string().required(),
     },
@@ -49,7 +49,7 @@ export const checkBalance = async (req, res, next) => {
     if (result) {
       return res.status(HTTPStatus.OK).json(JSON.parse(result))
     }
-    return next()
+    return res.status(HTTPStatus.NO_CONTENT).json(JSON.parse(result))
   } catch (err) {
     err.status = HTTPStatus.BAD_REQUEST;
     return next(err);
