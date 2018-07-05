@@ -1,8 +1,8 @@
 /*
  * @Author: Matheus Rezende
  * @Date: 2018-07-04 19:55:43
- * @Last Modified by:   @matheusrezende
- * @Last Modified time: 2018-07-04 19:55:43
+ * @Last Modified by: @matheusrezende
+ * @Last Modified time: 2018-07-05 14:37:48
  */
 require('dotenv').config();
 
@@ -11,14 +11,13 @@ const WHITELIST = {};
 
 // load dev configs from .env file
 const devConfig = {
+  ETH_NETWORK: process.env.ETH_TEST_NETWORK || 'localhost:8545',
 };
 
-// load test configs from .env file
-const testConfig = {
-};
 
 // load prod configs from .env file
 const prodConfig = {
+  ETH_NETWORK: process.env.ETH_PROD_NETWORK || 'localhost:8545',
 };
 
 const defaultConfig = {
@@ -28,15 +27,11 @@ const defaultConfig = {
 };
 
 function envConfig(env) {
-  
   switch (env) {
     case 'development':
       return devConfig;
-    case 'test':
-      return testConfig;
     default:
       return prodConfig;
-
   }
 }
 

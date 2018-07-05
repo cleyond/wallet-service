@@ -1,8 +1,8 @@
 /*
  * @Author: Matheus Rezende
  * @Date: 2018-07-04 19:54:37
- * @Last Modified by:   @matheusrezende
- * @Last Modified time: 2018-07-04 19:54:37
+ * @Last Modified by: @matheusrezende
+ * @Last Modified time: 2018-07-05 14:14:24
  */
 /**
  * Server setup
@@ -13,6 +13,7 @@ import Raven from 'raven'
 import Routes from './routes'
 import middlewaresConfig from './config/middlewares';
 import constants from './config/constants';
+import './config/web3'
 
 const app = express();
 Raven.config(constants.RAVEN_DSN).install();
