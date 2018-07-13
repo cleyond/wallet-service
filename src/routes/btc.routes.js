@@ -13,12 +13,12 @@ import * as BTCController from '../controllers/btc.controller';
 const routes = new Router();
 
 routes.post(
-  '/createaddress',
+  '/createAddress',
   BTCController.createAddress,
 );
 
 routes.post(
-  '/validateaddress',
+  '/validateAddress',
   validate(BTCController.validation.validateAddress),
   BTCController.validateAddress,
 );
