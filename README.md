@@ -1,12 +1,15 @@
 ### Wallet Service
 
-### running locally
+### DOCS
+http://wallet-services-rest-api.surge.sh/
+
+### Running locally
 ```
 yarn install OR npm install
 npm run dev
 ```
 
-### deploying on production
+### Deploying on production
 ```
 export NODE_ENV={development OR production}
 npm run build
@@ -17,6 +20,6 @@ npm start
 
 - Edit the env file to input the accounts for each environment
 
-## Postmamn
+## Postman
 
 https://documenter.getpostman.com/view/1839977/RWM6yswW

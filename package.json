@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "NODE_ENV=production node dist/index.js",
     "dev": "NODE_ENV=development nodemon src/index.js --exec babel-node --presets env",
     "build": "babel src -d dist",
     "docs": "apidoc -i src",
@@ -16,7 +16,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt-nodejs": "^0.0.3",
     "bitcore-lib": "^0.15.0",
     "chalk": "^2.4.1",
     "compression": "^1.7.2",

@@ -1,2 +1,2 @@
 npm run docs
-surge ./doc -d http://mymoxy-api.surge.sh/
+surge ./doc -d http://wallet-services-rest-api.surge.sh/
