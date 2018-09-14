@@ -1,9 +1,3 @@
-/*
- * @Author: Matheus Rezende
- * @Date: 2018-06-20 22:59:46
- * @Last Modified by: @matheusrezende
- * @Last Modified time: 2018-07-04 19:45:20
- */
 import httpStatus from 'http-status';
 
 /**

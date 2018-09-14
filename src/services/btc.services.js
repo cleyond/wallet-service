@@ -1,25 +1,35 @@
-/*
- * @Author: Matheus Rezende
- * @Date: 2018-07-04 19:54:44
- * @Last Modified by: @matheusrezende
- * @Last Modified time: 2018-07-04 21:29:33
- */
 import bitcore from 'bitcore-lib'
 import Request from 'request-promise'
 
 import {CHECK_BALANCE_URL} from '../constants/btc.constants';
 
+var HDPrivateKey = bitcore.HDPrivateKey;
 
 /**
  * @function createAddress
  *
  * @returns {String} address String
  */
-export const createBitcoreAddress = () => {
+export const createBitcoreAddress = (address) => {
   const privateKey = new bitcore.PrivateKey();
+
+  HDPrivateKey
+
   return privateKey.toAddress();
 }
 
+/**
+ * @function createHDWallet
+ *
+ * @returns {String} address String
+ */
+export const createHDWallet = () => {
+  const privateKey = new bitcore.PrivateKey();
+  return {
+    wif: privateKey.toWIF(), 
+    address: privateKey.toAddress()
+  };
+}
 
 /**
  * @function validateAddress

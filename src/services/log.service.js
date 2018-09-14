@@ -1,9 +1,3 @@
-/*
- * @Author: Matheus Rezende
- * @Date: 2018-07-04 19:55:09
- * @Last Modified by:   @matheusrezende
- * @Last Modified time: 2018-07-04 19:55:09
- */
 /**
  * Error handler for api routes
  */

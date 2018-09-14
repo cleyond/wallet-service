@@ -1,9 +1,3 @@
-/*
- * @Author: Matheus Rezende
- * @Date: 2018-07-04 19:55:35
- * @Last Modified by: @matheusrezende
- * @Last Modified time: 2018-07-05 13:42:23
- */
 import HTTPStatus from 'http-status';
 import Joi from 'joi'
 import * as BTCServices from '../services/btc.services';
@@ -25,7 +19,16 @@ export const validation = {
 
 export const createAddress = (req, res, next) => {
   try {
-    return res.status(HTTPStatus.CREATED).json(BTCServices.createBitcoreAddress())
+    return res.status(HTTPStatus.CREATED).json(BTCServices.createBitcoreAddress(req.params.address))
+  } catch (err) {
+    err.status = HTTPStatus.BAD_REQUEST;
+    return next(err);
+  }
+}
+
+export const createHDWallet = (req, res, next) => {
+  try {
+    return res.status(HTTPStatus.CREATED).json(BTCServices.createHDWallet())
   } catch (err) {
     err.status = HTTPStatus.BAD_REQUEST;
     return next(err);

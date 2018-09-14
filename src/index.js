@@ -1,9 +1,3 @@
-/*
- * @Author: Matheus Rezende
- * @Date: 2018-07-04 19:54:37
- * @Last Modified by: @matheusrezende
- * @Last Modified time: 2018-07-05 14:52:09
- */
 /**
  * Server setup
  */
@@ -21,7 +15,7 @@ Raven.config(constants.RAVEN_DSN).install();
 middlewaresConfig(app);
 
 // Add the apiRoutes stack to the server
-app.use('/api', Routes)
+app.use('/api', Routes);
 
 // We need this to make sure we don't run a second instance
 if (!module.parent) {

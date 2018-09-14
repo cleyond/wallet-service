@@ -1,9 +1,3 @@
-/*
- * @Author: Matheus Rezende
- * @Date: 2018-06-20 22:59:58
- * @Last Modified by:   @matheusrezende
- * @Last Modified time: 2018-06-20 22:59:58
- */
 /**
  * Filtered the request body for be sure
  * nothing wrong can be pass.

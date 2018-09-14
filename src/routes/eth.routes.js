@@ -1,16 +1,19 @@
-/*
- * @Author: Matheus Rezende
- * @Date: 2018-07-04 19:55:24
- * @Last Modified by: @matheusrezende
- * @Last Modified time: 2018-07-05 15:01:42
- */
-
 import {Router} from 'express';
 import validate from 'express-validation';
 
 import * as ETHController from '../controllers/eth.controller';
 
 const routes = new Router();
+
+routes.post(
+  '/hd/wallet',
+  ETHController.createHDWallet,
+);
+
+routes.post(
+  '/hd/wallet/:xpriv',
+  ETHController.createHDWalletNode,
+);
 
 routes.post(
   '/validate',

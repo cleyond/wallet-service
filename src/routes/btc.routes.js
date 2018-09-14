@@ -1,10 +1,3 @@
-/*
- * @Author: Matheus Rezende
- * @Date: 2018-07-04 19:55:24
- * @Last Modified by: @matheusrezende
- * @Last Modified time: 2018-07-05 13:43:06
- */
-
 import {Router} from 'express';
 import validate from 'express-validation';
 
@@ -13,8 +6,13 @@ import * as BTCController from '../controllers/btc.controller';
 const routes = new Router();
 
 routes.post(
-  '/createAddress',
+  '/createAddress/:address',
   BTCController.createAddress,
+);
+
+routes.post(
+  '/createHDWallet',
+  BTCController.createHDWallet,
 );
 
 routes.post(

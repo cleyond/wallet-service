@@ -1,12 +1,55 @@
-/*
- * @Author: Matheus Rezende
- * @Date: 2018-07-05 14:29:17
- * @Last Modified by: @matheusrezende
- * @Last Modified time: 2018-07-05 15:39:50
+import web3 from '../config/web3';
+import { months } from 'moment';
+
+import hdkey from 'ethereumjs-wallet/hdkey';
+import bip39 from 'bip39';
+
+/**
+ * @function validateAddress
+ * @param {String} address
+ * @returns {Bool} return if the address is valid or not
  */
+export const createHDWallet = () => {
+  const mnemonic = bip39.generateMnemonic();
+  const hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(mnemonic));
 
-import web3 from '../config/web3'
+  return {
+    mnemonic,
+    xpriv: hdwallet.privateExtendedKey(),
+    xpub: hdwallet.publicExtendedKey(),
+  };
+}
 
+export const createHDWalletNode = (masterKey) => {
+  const hdwallet = hdkey.fromExtendedKey(masterKey);
+
+  const path = "m/44'/60'/0'/0/0";
+
+  const wallet = hdwallet.derivePath(path).getWallet();
+  return {
+    addr: wallet.getAddressString(),
+    xpriv: wallet.getPrivateKeyString(),
+    xpub: wallet.getPublicKeyString(),
+  }
+
+}
+
+export const deriveChild = () => {
+
+  var path = "m/44'/60'/0'/0/0";
+
+  var wallet = hdwallet.derivePath(path).getWallet();
+  var address = "0x" + wallet.getAddress().toString("hex");
+  
+  console.log(hdwallet);  
+  console.log(wallet);  
+
+  return {
+    mnemonic,
+    address,
+
+  }
+}
 
 /**
  * @function validateAddress

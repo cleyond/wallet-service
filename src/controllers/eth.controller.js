@@ -1,9 +1,3 @@
-/*
- * @Author: Matheus Rezende
- * @Date: 2018-07-04 19:55:35
- * @Last Modified by: @matheusrezende
- * @Last Modified time: 2018-07-05 14:58:31
- */
 import HTTPStatus from 'http-status';
 import Joi from 'joi'
 import * as ETHServices from '../services/eth.services';
@@ -21,6 +15,24 @@ export const validation = {
   },
 }
 
+export const createHDWallet = (req, res, next) => {
+  try {
+    return res.status(HTTPStatus.CREATED).json(ETHServices.createHDWallet())
+  } catch (err) {
+    err.status = HTTPStatus.BAD_REQUEST;
+    return next(err);
+  }
+}
+
+export const createHDWalletNode = (req, res, next) => {
+  try {
+    const { xpriv } = req.params;
+    return res.status(HTTPStatus.CREATED).json(ETHServices.createHDWalletNode(xpriv));
+  } catch (err) {
+    err.status = HTTPStatus.BAD_REQUEST;
+    return next(err);
+  }
+}
 
 export const validateEthAddress = (req, res, next) => {
   try {
