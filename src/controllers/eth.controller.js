@@ -15,25 +15,6 @@ export const validation = {
   },
 }
 
-export const createHDWallet = (req, res, next) => {
-  try {
-    return res.status(HTTPStatus.CREATED).json(ETHServices.createHDWallet());
-  } catch (err) {
-    err.status = HTTPStatus.BAD_REQUEST;
-    return next(err);
-  }
-}
-
-export const createHDWalletNode = (req, res, next) => {
-  try {
-    const { xpriv } = req.params;
-    return res.status(HTTPStatus.CREATED).json(ETHServices.createHDWalletNode(xpriv));
-  } catch (err) {
-    err.status = HTTPStatus.BAD_REQUEST;
-    return next(err);
-  }
-}
-
 /**
  * @api {post} /eth/validate Validate address
  * @apiDescription Validates an address
@@ -142,6 +123,15 @@ export const getTxInfo = async (req, res, next) => {
   try {
     const result = await ETHServices.getTxInformation(req.params.txHash)
     return res.status(HTTPStatus.OK).json(result)
+  } catch (err) {
+    err.status = HTTPStatus.BAD_REQUEST;
+    return next(err);
+  }
+}
+
+export const createHDWallet = (req, res, next) => {
+  try {
+    return res.status(HTTPStatus.CREATED).json(ETHServices.createHDWallet());
   } catch (err) {
     err.status = HTTPStatus.BAD_REQUEST;
     return next(err);
