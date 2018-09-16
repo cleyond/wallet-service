@@ -17,7 +17,7 @@ export const validation = {
 
 export const createHDWallet = (req, res, next) => {
   try {
-    return res.status(HTTPStatus.CREATED).json(ETHServices.createHDWallet())
+    return res.status(HTTPStatus.CREATED).json(ETHServices.createHDWallet());
   } catch (err) {
     err.status = HTTPStatus.BAD_REQUEST;
     return next(err);
